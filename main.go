@@ -21,7 +21,7 @@ func mainWithArgs(ctx context.Context, args []string, logger golog.Logger) error
 		return err
 	}
 
-	nau7802SensorModule.AddModelFromRegistry(ctx, sensor.Subtype, nau7802module.Model)
+	nau7802SensorModule.AddModelFromRegistry(ctx, sensor.API, nau7802module.Model)
 
 	err = nau7802SensorModule.Start(ctx)
 	defer nau7802SensorModule.Close(ctx)
